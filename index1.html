@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="">
+    <script defer src=""></script>
+    <script defer src=""></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            background-color: darkslategrey;
+            border: 2px solid yellow;
+            max-width: 100%;
+            height: auto;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 75%;
+            position: relative;
+            margin: auto;
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Position the "prev button" to the left */
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        video {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #videoControls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .control-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .control-button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/_compresseds/32f5b0c8-5dff-2069-402e-b05ca770b2d1.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/_compresseds/ea34efce-bf92-e622-a31c-005f4305ac68.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/71f54aac-db13-c218-c304-20fcbce3b687.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/30ae5ea3-c433-1456-b514-8cccade7c276.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/_compresseds/e0cb1f4e-63d9-fe2b-d3ad-8e91894ccabc.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/_compresseds/0bb19775-3ebf-7c93-bd23-faef34d53955.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/_compresseds/6a351613-a180-5a88-9a2d-d5e8b6a7c7a2.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/_compresseds/eb1f039b-b305-374d-7de2-a09a4c5acdcc.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/10c4379e-6ec1-ec8a-3b2f-eda42d44c863.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/b4a051fa-1a39-c2aa-bbed-ac0084ad3af3.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/2772b64c-31ca-b275-6298-028043faa695.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/a6d97809-e41d-6045-ac67-7a3f135a1b31.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/445fd073-63ec-f1ed-a8ea-99c8faeacd7e.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/7e8504bf-42d3-fc2c-d979-fc07f517ac51.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/92f63da2-046b-6553-dba6-d76793058cb9.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 5</div>
+            <img src="https://www.aae.org/board/wp-content/uploads/sites/5/2017/10/lisellAndrea-300-150x150@2x.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/d80f786c-4f2b-64cf-7b84-8319c5799b80.jpeg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/46663341-60c5-a959-1018-cf38c06f65d8.jpeg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/2ea6ef67-5291-806c-216d-7842d376045f.jpeg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/1f970dac-67b6-df51-b64d-6d9fdccadf73.jpeg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/d505fd77-525f-1fd4-e49e-4aebe6959148.jpg" style="width:100%">
+            <div class="text">Caption Four</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/af9b2bc0-8226-d52d-5036-42050243dfd7.jpg" style="width:100%">
+            <div class="text">Caption Five</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/f2c4009e-d599-a6df-3f57-f15e3a500dc3.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/decd6024-3e8e-69ba-bec7-4ae1410ff4c4.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/7f3f08e4-1171-27ec-62dd-724202a94dee.jpg" style="width:100%; height: 75%;">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/a95a2ccf-174a-a6ef-b249-15610b4081ca.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/06176c9a-3eca-604f-d60d-ae5b13fca538.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/5e45ffda-e04b-54f9-fe14-064cf9696bc2.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/d00e5438-9bbf-5f57-539f-6860ba979332.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/ffafa917-caf4-fbc2-92d8-3ba063dbbcf5.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/0fd17873-f343-514f-b75f-2a5848fd2d56.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/d79d4597-3fab-6764-e99a-5f15dae293e8.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/6d4d252a-7163-88fd-2caf-48c9f4ce25fc.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/cc38a684-0f8d-2e86-dfd3-8b1ebe3c6a37.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/41e5156f-4f49-64ac-dea4-d63dec412437.jpg" style="width:100%">
+            <div class="text">Caption Five</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/ea91490a-7110-3024-f234-e4737e0f0e03.jpg" style="width:100%">
+            <div class="text">Caption Five</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/bffb0291-b487-45f7-7fd6-f644eda47d9e.jpg" style="width:100%">
+            <div class="text">Caption Five</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/8acbfb0a-8890-862a-b6aa-e2cee50d1a72.jpg" style="width:100%">
+            <div class="text">Caption Five</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="https://mcusercontent.com/854340fdfb775a5f6868e26cd/images/de2327a4-ab1c-e05e-b954-60520eba6b02.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <br><br>
+    <div id="videoSection" class="video-container">
+        <iframe style="border: 2px solid red; border-radius: 10px;" id="videoPlayer" src="" width="640" height="480" allow="autoplay" width="640" height="480" allow="autoplay"></iframe>
+        <div id="videoControls">
+            <button id="prevVideoButton" class="control-button">Previous Video</button>
+            <button id="nextVideoButton" class="control-button">Next Video</button>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        const videoPlaylist = [
+            'https://drive.google.com/file/d/1dwYQ79cihfUvOLQLxIR7gKp66W9SX-Ei/preview', // Video 1
+            'https://drive.google.com/file/d/1r9rjTmBXIGT4GKRlZieQU--0KM_GADDI/preview', // Video 2
+            'https://drive.google.com/file/d/1rigGsc_OvAt3L6kbUGQyTwnI1TwLyvnT/preview', // Video 3
+            'https://drive.google.com/file/d/10ImSEZUff0UiYtcAdHm_iuihznYG48NB/preview', // Video 4
+            'https://drive.google.com/file/d/1jMWYpH7otQaSTNrbHbrXXYQq6oS-ce2b/preview', // Video 5
+
+            'https://drive.google.com/file/d/15KAL-ODUMYfchuxS5DVnv0gDmQXPMUS6/preview', // Video 6
+            'https://drive.google.com/file/d/1r8Q6Ci0UWsnY4By2WwtPObl7BcJ49yig/preview', // Video 7
+
+            'https://drive.google.com/file/d/1l2Qi-MTblI9A9qdl-3Hv9lv9bmo6bJZX/preview', // Video 8
+
+            'https://drive.google.com/file/d/1338syt3KAEQ_u1ky4jx3-C6ViZjFRMnX/preview', // Video 9
+
+            'https://drive.google.com/file/d/1fpZVh6o1AKRv_aGIeWMBFG5ZraqS2yh6/preview', // Video 10
+            
+            'https://drive.google.com/file/d/12faip1e_35q2FWSXp_ub-Nh2W2mN-T6k/preview', // Video 11
+
+        ];
+
+        let currentVideoIndex = 0;
+        const videoPlayer = document.getElementById('videoPlayer');
+        const nextVideoButton = document.getElementById('nextVideoButton');
+        const prevVideoButton = document.getElementById('prevVideoButton');
+
+        function loadVideo(index) {
+            videoPlayer.src = videoPlaylist[index];
+        }
+
+        nextVideoButton.addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length;
+            loadVideo(currentVideoIndex);
+        });
+
+        prevVideoButton.addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex - 1 + videoPlaylist.length) % videoPlaylist.length;
+            loadVideo(currentVideoIndex);
+        });
+
+        // Load the first video on page load
+        loadVideo(currentVideoIndex);
+
+    </script>
+</body>
+
+</html>
